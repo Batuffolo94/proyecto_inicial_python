@@ -21,11 +21,16 @@ def leer_palabra_secreta():
 def pedir_letra(letras_usadas):
 
     while True:
-        print ('adivina la primera letra :')
+        print ('Adivina la primera letra :')
         letra = input()
         letra = letra.lower()
         if letra in letras_usadas: 
             continue 
+        
+        if len (letra) > 1:
+            print ("No ingreses mas de una letra a la vez")
+            continue
+
         else:
               letras_usadas.append(letra)
               return letra
